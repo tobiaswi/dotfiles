@@ -1,7 +1,7 @@
 user.name=Tobias Wischmeier
 user.email=tobias.wischmeier@outlook.com
-#user.signingkey=
+user.signingkey=26EB850B47A649F0
 push.default=simple
 core.autocrlf=input
-#gpg.program=/usr/bin/gpg
-#commit.gpgsign=true
+gpg.program=/usr/bin/gpg
+commit.gpgsign=true
