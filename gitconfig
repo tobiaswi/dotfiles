@@ -1,6 +1,6 @@
 user.name=Tobias Wischmeier
-user.email=tobias.wischmeier@outlook.com
-user.signingkey=26EB850B47A649F0
+user.email=tobias.wischmeier@quantophant.io
+user.signingkey=EA790285E428F246
 push.default=simple
 core.autocrlf=input
 gpg.program=/usr/bin/gpg
