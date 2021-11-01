@@ -2,10 +2,32 @@
 
 This repository holds different config files and guides for my personal and opininated developer workstation setup. Main goal is to document the hours of troubleshooting and configuraion in a central space to make moving to a different machine less painfull over time.
 
-# First Windows 11 setting changes
+# Windows 11 inital setup
 
 System > Multitasking - Alt + Tab "Open windows only" <br>
 For me personally the new default, that shows browser tabs with alt+tab, is super annoying. I have way to many tabs open and the setting reduces my ability to quickly swtich between windows.
+
+## Install Tools with winget
+I use winget for nearly all my tools/software installs as it allowes easy commandline updates for all everything. <br>
+My process to figure out the correct IDs (to prevent installing random, unknown software) is to check what a package is with "winget search $NameOfSoftware" <br>
+To install I use the following flags: <br>
+"-e,--exact Find package using exact match" <br>
+"--id Filter results by id" <br>
+
+"winget install -e --id $ID"
+IDs
+- Microsoft.Edge.Dev
+- Google.Chrome
+- Mozilla.Firefox
+- Postman.Postman
+- Microsoft.Git
+- Microsoft.GitCredentialManagerCore
+- Microsoft.PowerShell
+- DominikReichl.KeePass
+- SlackTechnologies.Slack
+- Spotify.Spotify
+
+To update the whole set at once "winget upgrade --all"
 
 ## Install fonts
 Depending on what setup your are going for, install either:
@@ -20,10 +42,12 @@ oh-my-posh <br>
 For oh-my-posh we want to use the Nerd Font version of Cascadia Code called Caskaydia Cove. This Font contains a ton of unique icons for your powershell promt.
 Download the latest release file from github. The file is just named "CascadiaCode.zip" and you want to install "Caskaydia Cove Nerd Font Complete.ttf" <br>
 
-## Install Shell - ZSH
-- install zsh
-- install oh-my-zsh
-- modify .zshrc
+## Shell setup
+- [install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+- [install oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/#basic-installation)
+- [install github cli ](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
+- //optional: Setup work and personal git configs by following [this answer on stackoverflow](https://stackoverflow.com/a/43654115)
+- modify default .zshrc to match the one in this repo - this may require installing a few other things first (go, powerline-go, zsh-plugins).
 - custom.zsh
 
 ## Windows Terminal settings

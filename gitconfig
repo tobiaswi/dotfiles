@@ -1,7 +1,8 @@
-user.name=Tobias Wischmeier
-user.email=tobias.wischmeier@quantophant.io
-user.signingkey=EA790285E428F246
-push.default=simple
-core.autocrlf=input
-gpg.program=/usr/bin/gpg
-commit.gpgsign=true
+[user]
+    user.name=Tobias Wischmeier
+    user.email=tobias.wischmeier@quantophant.io
+    push.default=simple
+    core.autocrlf=input
+    #user.signingkey=EA790285E428F246
+    #gpg.program=/usr/bin/gpg
+    #commit.gpgsign=true
