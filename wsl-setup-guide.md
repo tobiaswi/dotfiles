@@ -47,26 +47,29 @@ Download the latest release file from github. The file is just named "CascadiaCo
 - [install oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/#basic-installation)
 - [install github cli ](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
 - //optional: Setup work and personal git configs by following [this answer on stackoverflow](https://stackoverflow.com/a/43654115)
-- modify default .zshrc to match the one in this repo - this may require installing a few other things first (go, powerline-go, zsh-plugins).
-- custom.zsh
+- modify default .zshrc and change the theme to agnoster in a first step. Most of the customizations at the end of this repos .zshrc need some more setup (go, powerline-go, zsh-plugins).
+- create your custom.zsh file unter $HOME/.oh-my-zsh/custom and add exports under "General". Its also a good idea to new create your projects folder in $HOME and I also create a folger for my gocode $HOME/go. Enable aliases in custom.zsh that dont require other tools to be installed.
 
 ## Windows Terminal settings
-- Set Cascadia Code PL font in WSL profile
-- Set //wsl$/Ubuntu/home/tobiaswi as starting directory
+- Set "Cascadia Code PL" or "CaskaydiaCove Nerd Font" as Font face in the Appearance tab under Settings/Profiles
+- Set \\wsl$\Ubuntu\home\$USERNAME as starting directory
 
 ## VScode settings
-- Set Cascadia Code as VScode font
-- Same setting for for remote wsl
+To make sure VScode is also using our fonts I edit the editor.fontFamily setting. In addition I don't like the default autosuggestion function that adds suggestions on presing enter (I'm used to tab completion): 
 ````
-"terminal.integrated.fontFamily": "'Cascadia Code PL'"
+"editor.fontFamily": "'Cascadia Code PL', 'CaskaydiaCove NF', Consolas, 'Courier New', monospace'",
+"editor.acceptSuggestionOnEnter": "off"
 ````
 
-- Disable autossuggestions on enter: <br>
-https://i.imgur.com/EAkDgno.png
+## Go
+````
+curl -L --remote-name https://golang.org/dl/go1.17.2.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
+````
+Now is a good time to add the Go specific exports to your custom.zsh. This adds $GOPATH and gobin to your path.
 
 ## Powerline go
-- Install powerline-go based on docs (install golang before)
-https://github.com/justjanne/powerline-go#zsh
+- Install [powerline-go](https://github.com/justjanne/powerline-go#zsh) based on docs (install golang before)
 - powerline-go settings are in the .zshrc file in this repo
 
 
