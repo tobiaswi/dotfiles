@@ -1,50 +1,74 @@
-# Custom aliases
+#####################################################################
+# Alias
+#####################################################################
+
+## zsh easy of use
+alias zshconfig="vim ~/.zshrc"
+alias zshcustom="vim ~/.oh-my-zsh/custom/custom.zsh"
+
+## beeing lazy
 alias p="$HOME/projects"
 alias g="$HOME/go"
 alias h="history"
-alias k="kubectl"
-alias kx="kubectx"
-alias kn="kubens"
-alias zshconfig="vim ~/.zshrc"
-alias zshcustom="vim ~/.oh-my-zsh/custom/custom.zsh"
-#alias nodejs=node
-alias cd..='cd ..'
-alias l='ls -lF'
-alias ls='ls --color'
-alias la='ls -lah'
-alias grep='grep --color'
+#alias k="kubectl"
+alias tf="terraform"
+alias kx="kubectl ctx"
+alias kn="kubectl ns"
 
-zshreload() {
-    source ~/.zshrc
-}
+## optional comfort
+alias node=nodejs
 
-# General
-export PROJECTPATH=$HOME/projects
-export LS_COLORS="ow=01;36;40"
+#####################################################################
+# Environment
+#####################################################################
+
+## Zsh
+# shortening agnoster theme promt
 export DEFAULT_USER="`whoami`"
+export LS_COLORS="ow=01;36;40"
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 
-# Go
-export GOPATH=$PROJECTPATH/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+## Kubernetes
+export KUBECONFIG=$HOME/.kube/config
+export KREW_ROOT=$HOME/.krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-# Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+## Go
+export GOPATH=$HOME/go
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
-## JavaScript
+## JavaScript Tooling
 #export PATH="$PATH:`yarn global bin`"
 
 ## .NET
+#export PATH=$PATH:$HOME/.dotnet/tools"
 #export DOTNET_CLI_TELEMETRY_OPTOUT="1"
 
-# GPG
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-gpg-connect-agent updatestartuptty /bye
+## Rust
+export PATH=$PATH:$HOME/.cargo/bin
 
-# Autocompletion
-source /opt/az/bin/az.completion.sh
-source <(kubectl completion zsh)
+## Phyton
+export PATH="${PATH}:$(python3 -c 'import site; print(site.USER_BASE)')/bin"
+
+## GPG and SSH
+export GPG_TTY=$(tty)
+source $HOME/.gpg4wsl #install required windows software first!
+
+## WSL1 legacy settings. Sadly not working in WSL2
+#export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+#gpg-connect-agent updatestartuptty /bye
+
+#####################################################################
+# Auto Completion
+#####################################################################
+
+## Kubernetes & Co.
+[[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
 complete -F __start_kubectl k
-source <(minikube completion zsh)
-source <(helm completion zsh)
-#complete -C /opt/terraform/terraform terraform
+#source <(helm completion zsh)
+
+## Terraform
+complete -C /opt/terraform/terraform terraform
+
+## Azure
+source /opt/az/bin/az.completion.sh
