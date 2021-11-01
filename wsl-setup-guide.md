@@ -2,28 +2,42 @@
 
 This repository holds different config files and guides for my personal and opininated developer workstation setup. Main goal is to document the hours of troubleshooting and configuraion in a central space to make moving to a different machine less painfull over time.
 
-## Install ZSH
+# First Windows 11 setting changes
+
+System > Multitasking - Alt + Tab "Open windows only" <br>
+For me personally the new default, that shows browser tabs with alt+tab, is super annoying. I have way to many tabs open and the setting reduces my ability to quickly swtich between windows.
+
+## Install fonts
+Depending on what setup your are going for, install either:
+
+oh-my-zsh with powerline-go <br>
+[Cascadia code with PL](https://github.com/microsoft/cascadia-code/releases) <br>
+Download the latest release of Cascadia code and install CascadiaCodePL.ttf <br>
+This version of the cascadia font contains Powerline icons. Without these, our zsh prompot would display cryptic glyphs.
+
+oh-my-posh <br>
+[Caskaydia Cove NF](https://github.com/ryanoasis/nerd-fonts/releases) <br>
+For oh-my-posh we want to use the Nerd Font version of Cascadia Code called Caskaydia Cove. This Font contains a ton of unique icons for your powershell promt.
+Download the latest release file from github. The file is just named "CascadiaCode.zip" and you want to install "Caskaydia Cove Nerd Font Complete.ttf" <br>
+
+## Install Shell - ZSH
 - install zsh
 - install oh-my-zsh
 - modify .zshrc
 - custom.zsh
 
-## Install fonts
-- Cascadia code with PL
-- Caskaydia Cove NF
-
 ## Windows Terminal settings
-- Set Cascadia Code PL font in WSL profile \
+- Set Cascadia Code PL font in WSL profile
 - Set //wsl$/Ubuntu/home/tobiaswi as starting directory
 
 ## VScode settings
-- Set Cascadia Code as VScode font \
+- Set Cascadia Code as VScode font
 - Same setting for for remote wsl
 ````
 "terminal.integrated.fontFamily": "'Cascadia Code PL'"
 ````
 
-- Disable autossuggestions on enter:\
+- Disable autossuggestions on enter: <br>
 https://i.imgur.com/EAkDgno.png
 
 ## Powerline go
