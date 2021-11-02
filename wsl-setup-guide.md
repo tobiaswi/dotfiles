@@ -41,14 +41,7 @@ oh-my-posh <br>
 [Caskaydia Cove NF](https://github.com/ryanoasis/nerd-fonts/releases) <br>
 For oh-my-posh we want to use the Nerd Font version of Cascadia Code called Caskaydia Cove. This Font contains a ton of unique icons for your powershell promt.
 Download the latest release file from github. The file is just named "CascadiaCode.zip" and you want to install "Caskaydia Cove Nerd Font Complete.ttf" <br>
-
-## Shell setup
-- [install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
-- [install oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/#basic-installation)
-- [install github cli ](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
-- //optional: Setup work and personal git configs by following [this answer on stackoverflow](https://stackoverflow.com/a/43654115)
-- modify default .zshrc and change the theme to agnoster in a first step. Most of the customizations at the end of this repos .zshrc need some more setup (go, powerline-go, zsh-plugins).
-- create your custom.zsh file unter $HOME/.oh-my-zsh/custom and add exports under "General". Its also a good idea to new create your projects folder in $HOME and I also create a folger for my gocode $HOME/go. Enable aliases in custom.zsh that dont require other tools to be installed.
+My starting point where for oh-my-posh was [Scotts' blog](https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal)
 
 ## Windows Terminal settings
 - Set "Cascadia Code PL" or "CaskaydiaCove Nerd Font" as Font face in the Appearance tab under Settings/Profiles
@@ -61,7 +54,7 @@ To make sure VScode is also using our fonts I edit the editor.fontFamily setting
 "editor.acceptSuggestionOnEnter": "off"
 ````
 
-## Go
+# Go
 ````
 curl -L --remote-name https://golang.org/dl/go1.17.2.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
@@ -72,6 +65,20 @@ Now is a good time to add the Go specific exports to your custom.zsh. This adds 
 - Install [powerline-go](https://github.com/justjanne/powerline-go#zsh) based on docs (install golang before)
 - powerline-go settings are in the .zshrc file in this repo
 
+# Rust
+
+# Python
+
+# .NET
+
+
+# Shell setup
+- [install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+- [install oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/#basic-installation)
+- [install github cli ](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
+- //optional: Setup work and personal git configs by following [this answer on stackoverflow](https://stackoverflow.com/a/43654115)
+- modify default .zshrc and change the theme to agnoster in a first step. Most of the customizations at the end of this repos .zshrc need some more setup (go, powerline-go, zsh-plugins).
+- create your custom.zsh file unter $HOME/.oh-my-zsh/custom and add exports under "General". Its also a good idea to new create your projects folder in $HOME and I also create a folger for my gocode $HOME/go. Enable aliases in custom.zsh that dont require other tools to be installed.
 
 ## ZSH plugins
 Beside the default installed plugins you can get some very usefull/productive ones from the [zsh-users repository](https://github.com/zsh-users)
@@ -91,6 +98,7 @@ done
 
 ````
 syntax highlighting comes with a regressing reload timer when running zshreload in the same shell. dont reload to often in a single shell and your good. If reload takes 5-10sec+, close current shell and start a new one. Don't know whats the source of this but searching for the issue takes way longer than just opening a new one :-)
+
 
 # Kubernetes 
 ## kubectl 
