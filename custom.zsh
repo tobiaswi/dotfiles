@@ -10,7 +10,6 @@ alias zshcustom="vim ~/.oh-my-zsh/custom/custom.zsh"
 alias p="$HOME/projects"
 alias g="$HOME/go"
 alias h="history"
-#alias k="kubectl"
 alias tf="terraform"
 alias kx="kubectl ctx"
 alias kn="kubectl ns"
@@ -38,11 +37,11 @@ export GOPATH=$HOME/go
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
 ## JavaScript Tooling
-#export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:`yarn global bin`"
 
 ## .NET
-#export PATH=$PATH:$HOME/.dotnet/tools"
-#export DOTNET_CLI_TELEMETRY_OPTOUT="1"
+export PATH="$PATH:$HOME/.dotnet/tools"
+export DOTNET_CLI_TELEMETRY_OPTOUT="1"
 
 ## Rust
 export PATH=$PATH:$HOME/.cargo/bin
@@ -54,10 +53,6 @@ export PATH="${PATH}:$(python3 -c 'import site; print(site.USER_BASE)')/bin"
 export GPG_TTY=$(tty)
 source $HOME/.gpg4wsl #install required windows software first!
 
-## WSL1 legacy settings. Sadly not working in WSL2
-#export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-#gpg-connect-agent updatestartuptty /bye
-
 #####################################################################
 # Auto Completion
 #####################################################################
@@ -65,7 +60,7 @@ source $HOME/.gpg4wsl #install required windows software first!
 ## Kubernetes & Co.
 [[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
 complete -F __start_kubectl k
-#source <(helm completion zsh)
+source <(helm completion zsh)
 
 ## Terraform
 complete -C /opt/terraform/terraform terraform
